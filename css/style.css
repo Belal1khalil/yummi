@@ -89,7 +89,9 @@ body {
       -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
     }
   }
-
+ .h-20 {
+  height: 50px;
+ }
   .mw-50 {
     width: 50px;
   }
@@ -141,3 +143,6 @@ i:hover {
 .searchbychar input::placeholder {
   color: rgb(255, 208, 0);
 }
+
+
+

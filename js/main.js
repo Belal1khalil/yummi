@@ -19,7 +19,6 @@ var mealsContainer = document.querySelector(".meals-container");
       document.querySelector(".contact").classList.add("d-none");
       showsearchInputs()
       closenavTab()
-      $("html","body").animate({scrollTop:0} , 1000)
     })
     $(".category").on("click" , function() {
       document.querySelector(".contact").classList.add("d-none");
@@ -34,7 +33,7 @@ var mealsContainer = document.querySelector(".meals-container");
     $(".Ingredients").on("click" , function() {
       document.querySelector(".contact").classList.add("d-none");
         getingredients();
-        closenavTab()
+        closenavTab();
      })
     $(".contact-us").on("click" , function() {
         showContactUs();
@@ -90,7 +89,7 @@ $(".gear").on("click", function() {
             <div class="meal position-relative overflow-hidden rounded-2 cursor-pointer" onclick="getinstructions('${arr[i].idMeal}')">
                 <img src="${arr[i].strMealThumb}" class="w-100" alt="">
                 <div class="meal-layer position-absolute d-flex align-items-center text-dark p-2">
-                    <h3>${arr[i].strMeal}</h3>
+                    <h3 class=" w-100 text-center">${arr[i].strMeal}</h3>
                 </div>
             </div>
         </div>`
@@ -216,7 +215,7 @@ $(".gear").on("click", function() {
                 <img class="rounded-2 w-100" src="${meal.strMealThumb}" alt="">
                 <h4 class = "fw-bolder fs-1 text-center">${meal.strMeal}</h4>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 text-center">
                 <div class="meal-instructions">
                     <h2>instructions</h2>
                     <p>
@@ -360,8 +359,10 @@ $(".gear").on("click", function() {
             submitButton.classList.add("disabled");
             submitButton.classList.remove("enabled");
         }
-    }
-
+    }  
+    $(".nav-header .image").on("click" , function() {
+      location.replace("../index.html")
+    });
     jQuery(function() {
       searchByName("").then( function() {
         $(".loading").fadeOut(1000 , function() {
