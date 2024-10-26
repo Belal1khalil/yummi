@@ -244,10 +244,10 @@ $(".gear").on("click", function() {
     function showsearchInputs() {
         searchInputs.innerHTML = `
              <div class="row py-4">
-            <div class="col-md-6">
-                <input type="text" onkeyup = "searchByName(this.value)" placeholder="Search By Name" class="form-control bg-transparent search text-white">
+            <div class="col-md-6 searchbyname">
+                <input type="text" onkeyup = "searchByName(this.value)" placeholder="Search By Name" class="form-control bg-transparent search text-white mb-4">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 searchbychar">
                 <input type="text" onkeyup = "searchByChar(this.value)" maxlength="1" placeholder="Search By first Letter" class="form-control bg-transparent text-white">
             </div>
         </div>

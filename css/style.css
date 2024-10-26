@@ -135,3 +135,9 @@ i:hover {
 .links ul li:hover {
     cursor: pointer;
 }
+.searchbyname input::placeholder {
+  color: rgb(255, 208, 0);
+}
+.searchbychar input::placeholder {
+  color: rgb(255, 208, 0);
+}
