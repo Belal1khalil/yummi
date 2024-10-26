@@ -361,7 +361,7 @@ $(".gear").on("click", function() {
         }
     }  
     $("#home").on("click" , function() {
-      location.replace("../index.html");
+      location.reload()
     });
     jQuery(function() {
       searchByName("").then( function() {
