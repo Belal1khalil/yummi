@@ -360,8 +360,8 @@ $(".gear").on("click", function() {
             submitButton.classList.remove("enabled");
         }
     }  
-    $(".nav-header .image").on("click" , function() {
-      location.replace("../index.html")
+    $("#home").on("click" , function() {
+      location.replace("../index.html");
     });
     jQuery(function() {
       searchByName("").then( function() {
