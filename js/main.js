@@ -40,8 +40,47 @@ var mealsContainer = document.querySelector(".meals-container");
         closenavTab();
         searchInputs.innerHTML = ""
     }) 
-var navtabwidth = $("#nav-tabs").outerWidth();
-$(".aside").animate({left:`-${navtabwidth}px`} , 500);
+
+    
+    function slideup() {
+      $(".nav-sm li ").on("click" , function() {
+        $(".nav-sm").slideToggle(1000);
+      })
+    }
+
+    $("#navhome").on("click" , function() {
+      location.reload()
+    });
+
+    $("#navsearch").on("click" , function() {
+      document.querySelector(".contact").classList.add("d-none");
+      showsearchInputs()
+     
+     
+    })
+    $("#navcategory").on("click" , function() {
+      document.querySelector(".contact").classList.add("d-none");
+      getcategories();
+     
+    })
+    $("#navarea").on("click" , function() {
+      document.querySelector(".contact").classList.add("d-none");
+      getarea();
+   
+     })
+    $("#navIngredients").on("click" , function() {
+      document.querySelector(".contact").classList.add("d-none");
+        getingredients();
+       
+        
+     })
+    $("#navcontact-us").on("click" , function() {
+        showContactUs();
+        searchInputs.innerHTML = ""
+      
+    }) 
+   var navtabwidth = $("#nav-tabs").outerWidth();
+ $(".aside").animate({left:`-${navtabwidth}px`} , 500);
 $(".gear").on("click", function() {
   closenavTab()
 })
@@ -86,7 +125,7 @@ $(".gear").on("click", function() {
       let cartona = "";
       for(var i = 0 ; i<arr.length ; i++) {
         cartona += ` <div class="col-md-3">
-            <div class="meal position-relative overflow-hidden rounded-2 cursor-pointer" onclick="getinstructions('${arr[i].idMeal}')">
+            <div class="meal position-relative overflow-hidden rounded-2 cursor-pointer mt-3" onclick="getinstructions('${arr[i].idMeal}')">
                 <img src="${arr[i].strMealThumb}" class="w-100" alt="">
                 <div class="meal-layer position-absolute d-flex align-items-center text-dark p-2">
                     <h3 class=" w-100 text-center">${arr[i].strMeal}</h3>
@@ -153,7 +192,7 @@ $(".gear").on("click", function() {
       let cartona = "";
       for(var i = 0 ; i<arr.length ; i++) {
         cartona += ` <div class="col-md-3">
-            <div class="rounded-2 text-center cursor-pointer" onclick = "getingredientmeals('${arr[i].strIngredient}')">
+            <div class="rounded-2 text-center cursor-pointer mt-5" onclick = "getingredientmeals('${arr[i].strIngredient}')">
                    <i class="fa-solid fa-drumstick-bite fa-4x w-100"></i>
                       <h3>${arr[i].strIngredient}</h3>
                       <p> ${arr[i].strDescription.split(" ").slice(0,20).join(" ")}</p>
@@ -213,9 +252,9 @@ $(".gear").on("click", function() {
          var cartona = ` 
          <div class="col-md-4">
                 <img class="rounded-2 w-100" src="${meal.strMealThumb}" alt="">
-                <h4 class = "fw-bolder fs-1 text-center">${meal.strMeal}</h4>
+                <h4 class = "fw-bolder fs-1 mt-2">${meal.strMeal}</h4>
             </div>
-            <div class="col-md-8 text-center">
+            <div class="col-md-8">
                 <div class="meal-instructions">
                     <h2>instructions</h2>
                     <p>
